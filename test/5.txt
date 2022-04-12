@@ -1,0 +1,1 @@
+/home/sergey/go/src/stristan/gopro/counter/test/4.txt
