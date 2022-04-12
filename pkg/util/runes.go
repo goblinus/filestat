@@ -1,4 +1,4 @@
-package utils
+package util
 
 const ASCII_UPPER_LIMIT = 127
 

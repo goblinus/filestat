@@ -2,9 +2,8 @@ package workerpool
 
 import (
 	"bufio"
-	"fmt"
+	"github.com/goblinus/filestat/pkg/util"
 	"os"
-	"stristan/gopro/counter/pkg/utils"
 )
 
 type Task struct {
@@ -21,7 +20,7 @@ func proccess(task *Task) {
 	if file, err := os.Open(task.Filename); err == nil {
 		defer file.Close()
 		task.Result, task.Err = scanFile(file)
-		fmt.Println("file:", task.Filename, "task:", task.Result)
+		//fmt.Println("file:", task.Filename, "task:", task.Result)
 	} else {
 		task.Err = err
 	}
@@ -34,7 +33,7 @@ func scanFile(file *os.File) (map[rune]int, error) {
 	scanner := bufio.NewScanner(file)
 	scanner.Split(bufio.ScanRunes)
 	for scanner.Scan() {
-		if r := utils.ExtractRune(scanner.Text()); utils.IsAscii(r) {
+		if r := util.ExtractRune(scanner.Text()); util.IsAscii(r) {
 			if _, ok := result[r]; !ok {
 				result[r] = 0
 			}

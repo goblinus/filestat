@@ -1,1 +1,1 @@
-/home/sergey/go/src/stristan/gopro/counter/test/4.txt
+/home/sergey/go/src/github.com/goblinus/filestat/test/4.txt
