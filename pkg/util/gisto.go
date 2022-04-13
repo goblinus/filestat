@@ -47,7 +47,7 @@ func DrawHistogramm(data map[rune]int) {
 
 		symbolInterest := (float64(sumVal) / 100) * float64(v)
 		symbolGistLine := getGistLine(symbolInterest)
-		symbolMetaData := fmt.Sprintf("[%c <%U>, стат: %d/%d/%.f%%]", symbolToDisplay, k, sumVal, v, symbolInterest)
+		symbolMetaData := fmt.Sprintf("[%c <%U>, стат: %d/%3.d/%2.f%%]", symbolToDisplay, k, sumVal, v, symbolInterest)
 		io.WriteString(os.Stdout, fmt.Sprintf("%s %s\n", symbolMetaData, symbolGistLine))
 	}
 }
